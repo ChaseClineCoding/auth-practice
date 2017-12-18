@@ -24,12 +24,12 @@ app.use(cookieParser());
 app.use(cookieSession({
   name: 'g64',
   keys: ['keyboard cat'],
-  maxAge: 24 * 60 * 60 * 1000
+  maxAge: 10 * 1000
 }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', login);
-app.use('/restricted', restricted);
+app.use('/welcome', restricted);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
